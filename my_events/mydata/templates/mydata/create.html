@@ -1,0 +1,35 @@
+{% extends "mydata/index.html" %} {% load static %} {% block title %}
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block title %} {% endblock title %}
+    <link href="{% static '/css/style.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <nav id="body-nav">
+
+    </nav>
+    <main id="body-main">
+        <h2>Create New Event</h2>
+
+        <form action="{% url 'mydata:event_create' %}" method="POST">
+
+            {% csrf_token %}
+            <label>Name</label>
+            <input id="name" name="name" placeholder="Name" type="text" />
+            <br>
+            <label>Description</label>
+            <input id="description" name="description" placeholder="Description" type="text" />
+            <br>
+            <button type="submit">Create Event</button>
+
+
+    </main>
+    <footer id="body-footer">
+
+
+    </footer>
+    {% endblock %}
+</body>
+</html>

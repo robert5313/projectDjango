@@ -1,0 +1,34 @@
+{% extends "mydata/index.html" %} {% load static %}
+
+{% block title %}
+    <title>Update Event</title>
+
+{% endblock title %}
+
+    {% block content %}
+    <main>
+        <h2>
+            Update Event
+        </h2>
+
+        <form method="POST">
+            {% csrf_token %}
+
+
+            {% if create_update is event_update %}
+            <input type="hidden" name="id">
+            
+            Name: <br>
+
+            <input type="name" name="name" placeholder="Name" required><br>
+             <br><br>
+
+            Description: <br>
+            <p class="update_description">{{ my_event.description }}</p>
+            <input type="description" name="description" placeholder="Description" required><br>
+            <br><br>
+            <button type="submit">Submit</button>
+{% endif %}
+
+    </main>
+    {% endblock content %}

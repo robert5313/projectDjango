@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="{% static '/css/style.css' %}" rel="stylesheet" />
+    <link rel="icon" href="{% static 'images/plan.jpg' %}">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' />
+
+   {% block title %} <title> My Event Page </title>{% endblock title %}
+</head>
+
+
+<body>
+    <nav class="body-nav">
+        <ul>
+            <li><a href="base.html">Home</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">My Profile</a></li>
+        </ul>
+    </nav>
+    <main class="body-main">
+        <section class="head-index">
+        <div class="elfsight-app-9b7243ec-9c52-4f54-ae72-5b750436e106"></div>
+                <iframe src="https://calendar.google.com/calendar/embed?src=59ec981e3ca9d9d03d44b7035ead238abe2573e27dbf64a690355aeef44cf873%40group.calendar.google.com&ctz=Africa%2FNairobi" style="border: 5px" width="400" height="400" frameborder="2rem" scrolling="yes"></iframe>
+
+        <h1>Your event Calendar</h1>
+
+        
+        <ul>
+
+            {% for e in events %}
+            <li><a href="{{ e.id }}">{{ e.name }}</a></li>
+            <li<a href="{{ e.id }}">Starts at: ({{ e.starts_at }})</a></li>
+            <li<a href="{{ e.id }}">Ends at: ({{ e.ends_at }})</a></li>
+            {% endfor %}
+        </ul>
+        </section>
+        <section class="index-content">
+            {% block content %} {% endblock content %}
+        </section>
+    </main>
+    <footer class="body-footer">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+    </footer>
+    
+</body>
+</html>

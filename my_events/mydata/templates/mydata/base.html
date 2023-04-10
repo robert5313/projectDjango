@@ -1,0 +1,34 @@
+{% load static %}
+{% extends 'index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <!-- Linking the CSS file -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+
+
+
+    <!-- Linking the icon of the page -->
+    <link rel="icon" href="{% static 'images/plan.jpg' %}">
+</head>
+<body>
+    <nav id="body-nav">
+        <img src="{% static '' %}" alt="My image">
+
+    </nav>
+    
+
+    <main id="body-main">
+
+    </main>
+
+
+
+    <footer id="body-footer">
+ 
+    </footer>
+    {% block content %}
+</body>
+</html>
